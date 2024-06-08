@@ -16,13 +16,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+  <script defer src="./assets/js/main.js"></script>
   
   <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+<div class="container">
 <header class="header">
   <div class="header__inner">
+    <div class="header__icon">
+      <a href="tel:123-456-7890">
+        <img src="./assets/img/call.png" alt="電話アイコン">
+      </a>
+    </div>
     <div class="header__logo">
       <a href="./index.html">
         <img src="./assets/img/logo.png" alt="Hiraku Construction">
@@ -38,8 +47,38 @@
       <span class="header__btn-line"></span>
       <span class="header__btn-line"></span>
     </button>
-    <nav class="header__nav">
-      <ul class="header__list">
+
+    <nav class="header__nav" id="js-nav">
+      <ul class="header__list sp-menu">
+        <li class="header__item">
+          <a href="#" class="header__link">さんぷる保育園は<br>こんなところ</a>
+        </li>
+        <li class="header__item">
+          <a href="#" class="header__link">楽しい園生活</a>
+        </li>
+        <li class="header__item">
+          <a href="#" class="header__link">園の特徴</a>
+        </li>
+        <li class="header__item">
+          <a href="#" class="header__link">入園のご案内</a>
+        </li>
+        <li class="header__item">
+          <a href="#" class="header__link">書類ダウンロード</a>
+        </li>
+        <li class="header__item">
+          <a href="#" class="header__link">採用情報</a>
+        </li>
+        <li class="header__item">
+          <a href="#" class="header__link">アクセス</a>
+        </li>
+        <li class="header__item">
+          <a href="#" class="header__link">お問い合わせ</a>
+        </li>
+        <li class="header__item header__item--btn">
+          <a href="#" class="header__link">採用情報</a>
+        </li>
+      </ul>
+      <ul class="header__list pc-menu">
         <div class="l_border"></div>
         <li class="header__item">
           <a href="#" class="header__link">さんぷる保育園は<br>こんなところ</a>
@@ -65,18 +104,33 @@
     </nav>
   </div>
 </header>
+
 <main class="main">
   <section class="mv">
     <div class="mv__inner">
       <div class="mv__content">
-        <div class="mv__text">
-          <h1 class="mv__title"><img src="./assets/img/catch.png" alt="画像"></h1>
-          <div class="mv__lead">
-            <p>この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+        <div class="container">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/img/28964319_s 1.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/28965171_s 1.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/29167617_s 1.png" alt="">
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="mv__img">
-          <img src="./assets/img/28964319_s 1.png" alt="画像">
+          <div class="mv__text">
+            <div class="mv__title">
+              <img src="./assets/img/catch.png" alt="画像">
+            </div>
+            <div class="mv__lead">
+              <p>この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -122,6 +176,201 @@
       <a href="#" class="btn">新着情報一覧へ</a>
     </div>
   </section>
+
+  <section class="greeting">
+    <div class="greeting__inner">
+      <div class="greeting__contents">
+        <div class="greeting__img">
+          <img src="./assets/img/4211904_s.png" alt="画像">
+        </div>
+
+        <div class="greeting__text">
+          <div class="section__title">
+            <h2>ごあいさつ</h2>
+            <p>GREETING</p>
+          </div>
+
+          <div class="greeting__lead">
+            <p>この文章はダミーテキストです。<br> 文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。<br>文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="affection">
+    <div class="affection__inner">
+      <div class="section__title">
+        <h2>さんぷる保育園の想い</h2>
+        <p>AFFECTION</p>
+      </div>
+      <div class="affection__content">
+        <div class="affection__item">
+          <div class="affection__img">
+            <img src="./assets/img/29051694_s 1.png" alt="画像">
+          </div>
+          <div class="affection__btn">
+            <a href="#" class="btn">保育機能</a>
+          </div>
+        </div>
+        <div class="affection__item">
+          <div class="affection__img">
+            <img src="./assets/img/28271993_s 1.png" alt="画像">
+          </div>
+          <div class="affection__btn">
+            <a href="#" class="btn">給食・おやつ・食育</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="faq__inner">
+      <div class="section__title">
+        <h2>よくある質問</h2>
+        <p>FAQ</p>
+      </div>
+      <div class="faq__contents">
+        <div class="faq__lists">
+          <div class="faq__list">
+            <div class="faq__listHeader">
+              <span class="faq__qa">Q</span>
+              <div class="faq__listHeaderBlock">
+                <span class="faq__text">サンプルテキストサンプルテキストサンプルテキスト</span>
+              </div>
+            </div>
+            <div class="faq__descBlock">
+              <div class="faq__listBlock">
+                <span class="faq__an">A</span>
+                <p>サンプルテキストサンプルテキストサンプルテキスト<br>
+                サンプルテキストサンプルテキストサンプルテキスト<br>
+                サンプルテキストサンプルテキストサンプルテキスト</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="faq__lists">
+          <div class="faq__list">
+            <div class="faq__listHeader">
+              <span class="faq__qa">Q</span>
+              <div class="faq__listHeaderBlock">
+                <span class="faq__text">サンプルテキストサンプルテキストサンプルテキスト</span>
+              </div>
+            </div>
+            <div class="faq__descBlock">
+              <div class="faq__listBlock">
+                <span class="faq__an">A</span>
+                <p>サンプルテキストサンプルテキストサンプルテキスト<br>
+                サンプルテキストサンプルテキストサンプルテキスト<br>
+                サンプルテキストサンプルテキストサンプルテキスト</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="faq__lists">
+          <div class="faq__list">
+            <div class="faq__listHeader">
+              <span class="faq__qa">Q</span>
+              <div class="faq__listHeaderBlock">
+                <span class="faq__text">サンプルテキストサンプルテキストサンプルテキスト</span>
+              </div>
+            </div>
+            <div class="faq__descBlock">
+              <div class="faq__listBlock">
+                <span class="faq__an">A</span>
+                <p>サンプルテキストサンプルテキストサンプルテキスト<br>
+                サンプルテキストサンプルテキストサンプルテキスト<br>
+                サンプルテキストサンプルテキストサンプルテキスト</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="link">
+    <div class="link__inner">
+      <div class="link__item">
+        <ul class="link__list">
+          <li><a href="#">社会福祉法人さんぷる会</a></li>
+          <li><a href="#">情報公開</a></li>
+          <li><a href="#">行政へのリンク</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="middle">
+    <div class="middle__inner">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__link">
+        <div class="footer__access">
+          <div class="footer__access--ttl">
+            <p>社会福祉法人　さんぷる会</p>
+            <img src="./assets/img/さんぷる保育園.png" alt="画像">
+          </div>
+          <div class="footer__access--add">
+            <p>〒000-0000 東京都港区◯◯◯1-2-3 ◯◯◯ビル101</p>
+          </div>
+          <a href="#">アクセスはこちら</a>
+        </div>
+        <div class="f_border"></div>
+        <div class="sp_border"></div>
+        <div class="footer__tel">
+          <p>ご質問・ご相談など、<br> お気軽にお問い合わせください。</p>
+          <div class="footer__tel--main">
+            <a href="">03-1234-5678</a>
+          </div>
+
+          <div class="footer__tel--fax">
+            <span>FAX<a href="">03-123-5678</a></span>
+          </div>
+        </div>
+        <div class="sp_border"></div>
+      </div>
+      
+      <nav class="footer__nav">
+        <div class="fl_border"></div>
+        <ul class="footer__list">
+          <li class=""><a href="#">さんぷる保育園はこんなところ</a></li>
+          <li class=""><a href="#">楽しい園生活</a></li>
+          <li class=""><a href="#">園の特徴</a></li>
+          <li class=""><a href="#">入園のご案内</a></li>
+          <li class=""><a href="#">書類ダウンロード</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <section class="copyRight">
+    <div class="copyRight__inner">
+      <p>Copyright © Sample Daycare. All Rights Reserved.</p>
+    </div>
+  </section>
 </main>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="./assets/js/swiper-bundle.js"></script>
+
+<script>
+  // const mySwiper = new Swiper('.swiper', {
+  //   loop: true, // ループを有効にする
+  //     autoplay: {
+  //       delay: 3000, // スライドの自動再生間隔（ミリ秒）
+  //       disableOnInteraction: false, // ユーザー操作後も自動再生を無効にしない
+  //       waitForTransition: false,
+  //     },
+  //     effect: 'fade', // フェードエフェクトを使用
+  //     fadeEffect: {
+  //       crossFade: true, // クロスフェードを有効にする
+  //     },
+  // });
+</script>
 </body>
 </html>
