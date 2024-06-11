@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>サンプル保育園</title>
 
   <meta property="og:site_name" content="Hiraku Construction">
   <meta property="og:type" content="website">
   <meta property="og:url" content="#####">
-  <meta property="og:title" content="Hiraku Construction">
+  <meta property="og:title" content="サンプル保育園">
   <meta property="og:description" content="サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:image" content="#####">
   <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
 
   <script defer src="./assets/js/main.js"></script>
   
@@ -24,7 +25,6 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-<div class="container">
 <header class="header">
   <div class="header__inner">
     <div class="header__icon">
@@ -34,7 +34,7 @@
     </div>
     <div class="header__logo">
       <a href="./index.html">
-        <img src="./assets/img/logo.png" alt="Hiraku Construction">
+        <img src="./assets/img/logo.png" alt="サンプル保育園">
       </a>
       <div class="header__info">
         <p class="header__info-text"><img src="./assets/img/location_on.png" alt="画像">アクセス</p>
@@ -133,9 +133,9 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="bg__radius">
-      <img src="./assets/img/bg1.png" alt="">
+      <div class="bg__radius">
+        <img src="./assets/img/bg1.png" alt="">
+      </div>
     </div>
   </section>
 
@@ -195,6 +195,9 @@
           </div>
         </div>
       </div>
+      <!-- <div class="bg__radius second">
+        <img src="./assets/img/bg1.png" alt="画像">
+      </div> -->
     </div>
   </section>
 
@@ -220,6 +223,9 @@
           <div class="affection__btn">
             <a href="#" class="btn">給食・おやつ・食育</a>
           </div>
+        </div>
+        <div class="bg__radius third">
+          <img src="./assets/img/bg1.png" alt="画像">
         </div>
       </div>
     </div>
@@ -309,11 +315,11 @@
 
   <footer class="footer">
     <div class="footer__inner">
-      <div class="footer__link">
+      <div class="footer__item">
         <div class="footer__access">
           <div class="footer__access--ttl">
-            <p>社会福祉法人　さんぷる会</p>
-            <img src="./assets/img/さんぷる保育園.png" alt="画像">
+            <p>社会福祉法人 さんぷる会</p>
+            <img src="./assets/img/sample-logo.png" alt="画像">
           </div>
           <div class="footer__access--add">
             <p>〒000-0000 東京都港区◯◯◯1-2-3 ◯◯◯ビル101</p>
@@ -338,39 +344,38 @@
       <nav class="footer__nav">
         <div class="fl_border"></div>
         <ul class="footer__list">
-          <li class=""><a href="#">さんぷる保育園はこんなところ</a></li>
-          <li class=""><a href="#">楽しい園生活</a></li>
-          <li class=""><a href="#">園の特徴</a></li>
-          <li class=""><a href="#">入園のご案内</a></li>
-          <li class=""><a href="#">書類ダウンロード</a></li>
+          <li class="footer__link"><a href="#">さんぷる保育園はこんなところ</a></li>
+          <li class="footer__link"><a href="#">楽しい園生活</a></li>
+          <li class="footer__link"><a href="#">園の特徴</a></li>
+          <li class="footer__link"><a href="#">入園のご案内</a></li>
+          <li class="footer__link"><a href="#">書類ダウンロード</a></li>
         </ul>
       </nav>
     </div>
-  </footer>
-
-  <section class="copyRight">
-    <div class="copyRight__inner">
-      <p>Copyright © Sample Daycare. All Rights Reserved.</p>
+    <div class="footer__copyright">
+      <div class="footer__copyright--inner">
+        <p>Copyright © Sample Daycare. All Rights Reserved.</p>
+      </div>
     </div>
-  </section>
+  </footer>
 </main>
-</div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="./assets/js/swiper-bundle.js"></script>
 
 <script>
-  // const mySwiper = new Swiper('.swiper', {
-  //   loop: true, // ループを有効にする
-  //     autoplay: {
-  //       delay: 3000, // スライドの自動再生間隔（ミリ秒）
-  //       disableOnInteraction: false, // ユーザー操作後も自動再生を無効にしない
-  //       waitForTransition: false,
-  //     },
-  //     effect: 'fade', // フェードエフェクトを使用
-  //     fadeEffect: {
-  //       crossFade: true, // クロスフェードを有効にする
-  //     },
-  // });
+  const mySwiper = new Swiper('.swiper', {
+    loop: true, // ループを有効にする
+    autoplay: {
+      delay: 4000, // スライドの自動再生間隔（ミリ秒）
+      disableOnInteraction: false, // ユーザー操作後も自動再生を無効にしない
+      waitForTransition: false,
+    },
+    effect: 'fade', // フェードエフェクトを使用
+    fadeEffect: {
+      crossFade: true, // クロスフェードを有効にする
+    },
+    speed: 3000,
+  });
 </script>
 </body>
 </html>

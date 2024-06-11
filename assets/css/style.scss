@@ -111,6 +111,8 @@ a {
 }
 
 .sp_border {
+  display: none;
+  
   @include mq( 'sp' ) {
     border-bottom: 1px dotted #000;
       margin: 32px 0;
@@ -125,7 +127,6 @@ a {
 }
 
 .container {
-  width: 1280px;
   margin: 0 auto;
   max-width: 100%;
 }
@@ -135,21 +136,63 @@ a {
   top: 50%;
   left: 50%;
 
+
   @include mq( 'sp' ) {
-    display: none;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: -20%;
   }
 
   @include mq( 'tab' ) {
-    display: none;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: -20%;
+  }
+
+  &.second {
+    top: 50%;
+    left: 0%;
+    z-index: -1;
+
+    @include mq( 'sp' ) {
+      top: 80%;
+      left: 50%;
+      z-index: -1;
+      display: none;
+    }
+
+    @include mq( 'tab' ) {
+      top: 80%;
+      left: 50%;
+      z-index: -1;
+      display: none;
+    }
+  }
+
+  &.third {
+    top: 50%;
+    left: 70%;
+    z-index: -1;
+
+    @include mq( 'sp' ) {
+      display: none;
+    }
+
+    @include mq( 'tab' ) {
+      display: none;
+    }
   }
 }
+
 
 /* ======================
   header
 ====================== */
 
 .header {
-  padding: 40px 200px 40px 200px;
+  padding: 0 200px;
 
   @include mq('sp') {
     height: 64px;
@@ -226,6 +269,10 @@ a {
 
     @include mq('sp') {
       display: none;
+    }
+
+    p {
+      font-weight: 700;
     }
   }
 
@@ -376,14 +423,19 @@ a {
         padding: 8px 32px;
         background-color: #fff; 
         border: 1px solid #8b4513; 
-        border-radius: 50px; /* 角を丸くする */
+        border-radius: 50px; 
         text-align: center;
-        text-decoration: none; /* テキストの下線を消す */
+        text-decoration: none; 
         font-weight: bold;
       }
   
       &:hover .header__link {
-        background-color: #e5e84e; /* ホバー時の背景色 */
+        background-color: #F2FF5C;
+        text-decoration: none; 
+      }
+
+      .header__link::after {
+        display: none; 
       }
     }
   }
@@ -393,22 +445,44 @@ a {
     text-align: center;
     padding: 25px 0;
     text-decoration: none;
+    font-weight: 700;
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: #000; 
-      transition: width 0.3s ease, left 0.3s ease;
-      transform: translateX(-50%);
+    @include mq('sp') {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background-color: #000; 
+        transition: width 0.3s ease, left 0.3s ease;
+        transform: translateX(-50%);
+      }
+  
+      &:hover::after {
+        width: 100%;
+        left: 50%;
+      }
     }
 
-    &:hover::after {
-      width: 100%;
-      left: 50%;
+    @include mq('tab') {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background-color: #000; 
+        transition: width 0.3s ease, left 0.3s ease;
+        transform: translateX(-50%);
+      }
+  
+      &:hover::after {
+        width: 100%;
+        left: 50%;
+      }
     }
   }
 }
@@ -419,11 +493,13 @@ a {
   @include mq('sp') {
     display: flex;
     flex-direction: column;
+    gap: 28px;
   }
 
   @include mq('tab') {
     display: flex;
     flex-direction: column;
+    gap: 28px;
   }
 }
 
@@ -444,11 +520,6 @@ a {
 ====================== */
 .mv {
 
-  &__inner {
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-  
   &__content {
     display: flex;
     justify-content: center; 
@@ -477,19 +548,22 @@ a {
     justify-content: center;
     position: absolute;
     top: 10%;
-    left: 5%;
+    left: 0;
     z-index: 11;
+    width: 50%;
 
     @include mq('sp') {
       position: relative;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%); 
     }
 
     @include mq('tab') {
       position: relative;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%); 
     }
 
     img {
@@ -501,20 +575,28 @@ a {
 
   &__lead {
     background-color: #F2FF5C;
-    max-width: 601px;
-    padding: 32px 32px 32px 80px;
+    max-width: 50%;
+    padding: 32px;
     position: absolute;
     top: 37%;
     z-index: 10;
 
     @include mq('sp') {
       position: relative;
+      top: auto; /* topの値をリセット */
+      left: auto; /* leftの値をリセット */
+      transform: none; /* transformの値をリセット */
       max-width: 100%;
+      margin: 0 auto; /* コンテンツを中央揃え */
     }
-
+  
     @include mq('tab') {
       position: relative;
+      top: auto; /* topの値をリセット */
+      left: auto; /* leftの値をリセット */
+      transform: none; /* transformの値をリセット */
       max-width: 100%;
+      margin: 0 auto; /* コンテンツを中央揃え */
     }
     
 
@@ -550,16 +632,16 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: auto;
 
   img {
     width: 100%;
-    max-width: 779px;
-    height: auto;
+    height: 100%;
 
     @include mq('pc') {
-      width: 100vh;
-      max-width: 779px;
-      height: auto;
+      width: 100%;
+      max-width: 60%;
+      height: 100%;
     }
   }
 }
@@ -569,9 +651,6 @@ a {
 ====================== */
 
 .news {
-  width: 1280px;
-  max-width: 100%;
-  margin: 0 auto;
   padding: 0px 200px;
   margin-top: 72px;
 
@@ -588,6 +667,8 @@ a {
     gap: 72px;
     position: relative;
     margin: 0 auto;
+    width: 880px;
+    max-width: 100%;
 
     @include mq('sp') {
       flex-direction: column;
@@ -621,6 +702,7 @@ a {
     display: flex;
     gap: 25px;
     padding: 9px 16px;
+    align-items: center;
 
     &:hover {
       opacity: 0.5;
@@ -634,9 +716,23 @@ a {
   }
 
   &__content {
+    position: relative; 
+    padding-right: 50px;
+
+    a {
+      display: inline-block;
+    }
+
+
     .new {
       background-color: #F2FF5C;
       padding: 0px 8px;
+      white-space: nowrap; 
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%); 
     }
   }
 
@@ -678,49 +774,49 @@ a {
   }
 }
 
+/* ======================
+  greeting
+====================== */
+
 .greeting {
   margin-top: 75px;
+  background-color: #FFF5E2;
+
+  &__inner {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 
   &__contents {
     display: flex;
-    background-color: #FFF5E2;
     align-items: center;
+    position: relative;
 
     @include mq('sp') {
-      flex-direction: column;
-    }
-
-    @include mq('tab') {
       flex-direction: column;
     }
   }
 
   &__img {
-    @include mq('sp') {
-      margin-bottom: 32px;
-    }
 
-    @include mq('tab') {
+    @include mq('sp') {
       margin-bottom: 32px;
     }
 
     img {
       width: 100%;
       max-width: 100%;
+      object-fit: cover;
     }
   }
 
   &__text {
-    width: 501px;
-    max-width: 100%;
+    max-width: 501px;
     padding: 0 200px 0 58px;
 
     @include mq('sp') {
       padding: 32px 22px;
-    }
-
-    @include mq('tab') {
-     padding: 32px 22px;
     }
   }
 
@@ -731,8 +827,10 @@ a {
   }
 }
 
+/* ======================
+  affection
+====================== */
 .affection {
-  padding: 0 200px;
   margin-top: 72px;
 
   @include mq('sp') {
@@ -740,11 +838,13 @@ a {
   }
 
   @include mq('tab') {
-    padding: 0 20px;
+    padding: 0;
   }
 
   &__inner {
-    position: relative;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
   }
 
   &__content {
@@ -753,12 +853,6 @@ a {
     gap: 24px;
 
     @include mq('sp') {
-      flex-direction: column;
-      gap: 80px;
-      align-items: center;
-    }
-
-    @include mq('tab') {
       flex-direction: column;
       gap: 80px;
       align-items: center;
@@ -773,6 +867,11 @@ a {
     width: 424px;
     max-width: 100%;
     height: 240px;
+
+    @include mq('sp') {
+      width: 342px;
+      height: auto;
+    }
   }
 
   &__btn {
@@ -781,29 +880,28 @@ a {
     max-width: 100%;
     height: 56px;
     background-color: #F2FF5C;
-    padding: 8px 32px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 24px;
     line-height: 21.72px;
-    top: 90%;
-    left: 20%;
+    top: 100%;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%,-50%);
 
     @include mq('sp') {
-      left: 50%; 
-      transform: translateX(-50%); 
       align-items: center;
-    }
-
-    @include mq('tab') {
-      left: 50%; 
-      transform: translateX(-50%); 
-      align-items: center;
+      margin-top: 0;
     }
 
     &::after {
       content: url("../img/Vector\ 1.png");
+      position: absolute;
+      right: 5%;
+      top: 22%;
+      width: 40px;
+      height: 8px;
     }
 
     a {
@@ -816,6 +914,10 @@ a {
      }
   }
 }
+
+/* ======================
+  faq
+====================== */
 
 .faq {
   background-color: #FFF5E2;
@@ -831,7 +933,7 @@ a {
   }
 
   &__inner {
-    width: 1280px;
+    width: 880px;
     max-width: 100%;
     margin: 0 auto;
   }
@@ -862,9 +964,12 @@ a {
 
     &.on {
       .faq__listHeader {
+        border-bottom: none;
         &::after {
           content: '-';
-          transform: rotate(180deg);
+          transform: rotate(0deg); 
+          position: absolute;
+          right: 5%;
 
           @include mq('sp') {
             right: 2%;
@@ -874,6 +979,7 @@ a {
       .faq__descBlock {
         opacity: 1;
         height: auto;
+        border-bottom: 1px solid #3f3f3f;
       }
     }
   }
@@ -891,7 +997,7 @@ a {
       content: '+';
       position: absolute;
       right: 5%;
-      font-size: 18px;
+      font-size: 22px;
       transition: transform 0.3s ease, content 0.3s ease;
 
       @include mq('sp') {
@@ -937,6 +1043,11 @@ a {
   }
 }
 
+
+/* ======================
+  link
+====================== */
+
 .link {
   padding: 32px 200px;
   height: 84px;
@@ -952,7 +1063,7 @@ a {
   }
 
   &__inner {
-    width: 1280px;
+    width: 800px;
     max-width: 100%;
     margin: 0 auto;
   }
@@ -995,6 +1106,10 @@ a {
   }
 }
 
+/* ======================
+  middle
+====================== */
+
 .middle {
   
   &__inner {
@@ -1003,27 +1118,38 @@ a {
     background-position: center;
     object-fit: cover;
     height: 290px;
+
+    @include mq('sp') {
+      height: 176px;
+    }
   }
 }
 
+/* ======================
+  footer
+====================== */
+
 .footer {
-  padding: 0 200px;
   background-color: #F2FF5C;
 
-  @include mq('sp') {
-    padding: 0 20px;
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 200px;
+
+    @include mq('sp') {
+      padding: 0 20px;
+    }
+  
+    @include mq('tab') {
+      padding: 0 20px;
+    }
   }
 
-  @include mq('tab') {
-    padding: 0 20px;
-  }
-
-  &__link {
+  &__item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 880px;
-    max-width: 100%;
     margin-bottom: 32px;
 
     @include mq('sp') {
@@ -1116,44 +1242,72 @@ a {
   }
 
   &__nav {
-    width: 880px;
-    max-width: 100%;
     padding-bottom: 30px;
   }
 
-  &__list {
+  .footer__list {
     display: flex;
     justify-content: space-between;
-
+  
     @include mq('sp') {
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
     }
-
+  
     @include mq('tab') {
       flex-direction: column;
       align-items: center;
       gap: 16px;
     }
   }
-}
+  
+  .footer__link {
+    position: relative;
+    font-size: 13px;
+    text-decoration: none;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background-color: #000; 
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+      margin-top: 3px;
+    }
+  
+    &:hover::after {
+      width: 100%;
+      left: 50%;
+    }
+  
+    @include mq('sp') {
+      &:hover::after {
+        width: 100%;
+        left: 50%;
+      }
+    }
+  }
 
-.copyRight {
-  padding: 24px 0;
+  &__copyright {
+    background-color: #fff; /* コピーライトの背景色 */
+    padding: 10px 0;
 
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1280px;
-    max-width: 100%;
+    &--inner {
+      max-width: 1200px;
+      margin: 0 auto;
 
-    p {
-      font-size: 11px;
-      font-weight: 500;
-      line-height: 15.93px;
-      letter-spacing: 0.05em;
+      p {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 17.38px;
+        text-align: center;
+      }
     }
   }
 }

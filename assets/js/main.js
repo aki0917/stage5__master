@@ -27,22 +27,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // アコーディオンを開閉する関数
   const openAco = (e) => {
-      const target = e.currentTarget;
-      const hiddenBlock = target.querySelector(".faq__descBlock");
-      const descList = target.querySelector(".faq__listBlock");
-      const descListHeight = descList.offsetHeight;
+    const target = e.currentTarget;
+    const hiddenBlock = target.querySelector(".faq__descBlock");
+    const descList = target.querySelector(".faq__listBlock");
+    const descListHeight = descList.offsetHeight;
 
-      descBlocks.forEach((elem) => {
-          elem.style.height = `0`;
-      });
+    descBlocks.forEach((elem) => {
+      elem.style.height = `0`;
+    });
 
-      if(target.classList.contains('on')) {
-          target.classList.remove('on');
-          hiddenBlock.style.height = `0`;
-      } else {
-          target.classList.add('on');
-          hiddenBlock.style.height = `${descListHeight}px`;
-      }
+    if(target.classList.contains('on')) {
+      target.classList.remove('on');
+      hiddenBlock.style.height = `0`;
+    } else {
+      target.classList.add('on');
+      hiddenBlock.style.height = `${descListHeight}px`;
+    }
+      
   }
 
   // アコーディオン開閉のイベントリスナー
