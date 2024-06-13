@@ -4,26 +4,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // スクロール時の関数
   const handleScroll = () => {
-      elements.forEach(element => {
-          const rect = element.getBoundingClientRect();
-          if (rect.top < window.innerHeight - 100) {
-            element.classList.add('visible');
-          }
-      });
+    elements.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        element.classList.add('visible');
+      }
+    });
   };
 
   // スクロールイベントのリスナー
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // リロード時の表示処理
 
-  //定義
+  // FAQのアコーディオン開閉の定義
   const actionOpen = document.querySelectorAll(".faq__list");
   const descBlocks = document.querySelectorAll(".faq__descBlock");
 
-  //ハンバーガーメニュー関数
+  // ハンバーガーメニューの要素取得
   const hamburgerButton = document.getElementById('js-header-btn');
   const navMenu = document.getElementById('js-nav');
-  
 
   // アコーディオンを開閉する関数
   const openAco = (e) => {
@@ -36,19 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
       elem.style.height = `0`;
     });
 
-    if(target.classList.contains('on')) {
+    if (target.classList.contains('on')) {
       target.classList.remove('on');
       hiddenBlock.style.height = `0`;
     } else {
       target.classList.add('on');
       hiddenBlock.style.height = `${descListHeight}px`;
     }
-      
   }
 
   // アコーディオン開閉のイベントリスナー
   actionOpen.forEach((elem) => {
-    elem.addEventListener("click",(e) => {
+    elem.addEventListener("click", (e) => {
       openAco(e);
     });
   });
@@ -57,6 +55,5 @@ document.addEventListener("DOMContentLoaded", () => {
   hamburgerButton.addEventListener('click', () => {
     hamburgerButton.classList.toggle('active');
     navMenu.classList.toggle('open');
-    
   });
 });
